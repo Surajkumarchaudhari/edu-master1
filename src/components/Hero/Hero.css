@@ -1,0 +1,123 @@
+/* HERO MAIN */
+.hero {
+  width: 100%;
+  background: #ff7a00;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+}
+
+/* LEFT + RIGHT CONTAINER */
+.hero-container {
+  width: 90%;
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  padding: 70px 0;
+}
+
+/* LEFT SIDE */
+.hero-left {
+  width: 46%;
+  color: #fff;
+}
+
+.hero-left h1 {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.hero-left h1 span {
+  background: #fff;
+  color: #111;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.hero-left p {
+  font-size: 17px;
+  margin: 18px 0 25px;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary {
+  background: #fff;
+  color: #ff7a00;
+  border: none;
+}
+
+.outline {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+/* RIGHT IMAGE — FULL HEIGHT FIX */
+.hero-right {
+  position: absolute;
+  right: -120px;       /* ⭐ SHIFT IMAGE TO RIGHT — ONLY CHANGE */
+  top: 0;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hero-img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 40px 0;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    position: relative;
+  }
+
+  .hero-right {
+    height: 260px;
+    right: 0;    /* mobile me shift hata diya */
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-left h1 {
+    font-size: 32px;
+  }
+}

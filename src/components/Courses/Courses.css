@@ -1,0 +1,86 @@
+/* OUTER WRAPPER */
+.courses-section {
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.courses-container {
+  width: 90%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* FILTER BUTTONS */
+.course-filter-box {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.filter-btn {
+  padding: 8px 22px;
+  border-radius: 40px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.filter-btn.active {
+  background: #ff7a00;
+  color: white;
+}
+
+/* TITLES */
+.heading {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  margin-top: 25px;
+}
+
+.neet-heading {
+  color: #22b96a;
+}
+
+/* UNDERLINE */
+.category-sep {
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+  background: #ffe2c3;
+  margin-bottom: 30px;
+}
+
+.category-sep.neet {
+  background: #caffe1;
+}
+
+/* PERFECT GRID — FINAL */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  column-gap: 35px;
+  row-gap: 55px;    /* 🔥 FINAL VALUE — NO OVERLAP GUARANTEED */
+
+  margin-bottom: 60px;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 45px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+    row-gap: 35px;
+  }
+}

@@ -1,0 +1,148 @@
+/* Navbar */
+.navbar {
+  width: 100%;
+  padding: 18px 0;
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo Left */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-box {
+  background: #ff9800;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.logo-text h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.logo-text span {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #666;
+}
+
+/* Desktop Menu */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #ff6c00;
+}
+
+/* Right Buttons */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.light-btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #ffe5c2;
+  color: #333;
+}
+
+.login-btn {
+  padding: 6px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #ff6c00;
+  color: white;
+  font-weight: 600;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* ---------------- MOBILE MENU ---------------- */
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 15px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transition: 0.4s ease;
+  z-index: 2000;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+}
+
+.mobile-menu a:hover {
+  color: #ff6c00;
+}
+
+.close-btn {
+  font-size: 40px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
