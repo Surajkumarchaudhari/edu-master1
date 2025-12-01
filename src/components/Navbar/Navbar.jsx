@@ -26,7 +26,7 @@ const Navbar = () => {
             <li><Link to="/admissions">Admissions</Link></li>
             <li><Link to="/resources">Resources</Link></li>
             <li><Link to="/faculty">Faculty</Link></li>
-            <li><Link to="/placements">Placements</Link></li>
+            <li><Link to="/placements">Achievement</Link></li>
             <li><Link to="/blog">Blog</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
@@ -34,7 +34,11 @@ const Navbar = () => {
           {/* Right Buttons */}
           <div className="nav-right">
             <button className="light-btn">Light</button>
-            <button className="login-btn">Login</button>
+
+            {/* ⭐ FIX: Login now works because using Link */}
+            <Link to="/login">
+              <button className="login-btn">Login</button>
+            </Link>
 
             {/* Hamburger Icon */}
             <div
@@ -60,6 +64,9 @@ const Navbar = () => {
         <Link onClick={() => setMenuOpen(false)} to="/placements">Placements</Link>
         <Link onClick={() => setMenuOpen(false)} to="/blog">Blog</Link>
         <Link onClick={() => setMenuOpen(false)} to="/contact">Contact</Link>
+
+        {/* ⭐ Mobile Login fix */}
+        <Link onClick={() => setMenuOpen(false)} to="/login">Login</Link>
       </div>
 
     </>

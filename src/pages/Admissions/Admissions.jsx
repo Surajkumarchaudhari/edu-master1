@@ -1,108 +1,105 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Admissions.css";
 
+import ProgramModal from "../../components/ProgramModal";
+import SuccessPopup from "../../components/SuccessPopup";
+
 const Admissions = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [popup, setPopup] = useState(false);
+  const [modalData, setModalData] = useState({});
+
+  const programs = {
+    jee: {
+      title: "JEE Main + Advanced",
+      desc: "Highly intensive program for JEE aspirants targeting IITs.",
+      points: [
+        "Complete PCM syllabus",
+        "Advanced test series",
+        "Expert mentorship",
+        "Daily practice sheets"
+      ]
+    },
+
+    neet: {
+      title: "NEET Target Batch",
+      desc: "Perfect program for students targeting NEET 2025.",
+      points: [
+        "Full PCB syllabus",
+        "Weekly mock tests",
+        "Doubt solving sessions",
+        "Assignments & PYQs"
+      ]
+    }
+  };
+
+  const openModal = (program) => {
+    setModalData(programs[program]);
+    setModalOpen(true);
+  };
+
+  const handleSubmit = () => setPopup(true);
+
   return (
     <div className="admission-page">
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <section className="hero-section">
+
         <div className="hero-left">
           <h1>
-            Join India’s Top Coaching  
-            <span> – Admissions Open</span>
+            Build Your Future With  
+            <span> India's Leading Coaching</span>
           </h1>
 
-          <p className="hero-sub">
-            Expert faculty • Structured courses • Daily doubt solving • Personalized mentorship
-          </p>
+          <p className="hero-sub">Expert Teachers • Smart Tests • Doubt Support</p>
 
           <div className="hero-buttons">
-            <button className="btn-primary">Apply for Free Counselling</button>
+            <button className="btn-primary glow">Apply for Free Counselling</button>
             <button className="btn-outline">Download Prospectus</button>
-          </div>
-
-          <div className="hero-stats">
-            <p>⭐ 4.8/5 Student Ratings</p>
-            <p>🎓 10,000+ Students Trained</p>
-            <p>🏆 Top AIR Ranks Every Year</p>
           </div>
         </div>
 
-        <div className="hero-form">
+        <div className="hero-form glass">
           <h3>Quick Apply</h3>
 
           <input type="text" placeholder="Full Name" />
           <input type="text" placeholder="Phone Number" />
 
           <select>
-            <option>JEE Main + Advanced</option>
-            <option>NEET Target Batch</option>
-            <option>Foundation Class 9</option>
-            <option>Foundation Class 10</option>
+            <option>Select Program</option>
+            <option>JEE</option>
+            <option>NEET</option>
           </select>
 
-          <button className="btn-primary full">Get Counselling</button>
-        </div>
-      </section>
-
-      {/* WHY CHOOSE US */}
-      <section className="why-section">
-        <h2>Why Students Trust Us</h2>
-
-        <div className="why-grid">
-          <div className="why-card">
-            <h4>📘 Comprehensive Syllabus</h4>
-            <p>Complete and structured preparation with expert-designed material.</p>
-          </div>
-
-          <div className="why-card">
-            <h4>🧠 Adaptive Tests</h4>
-            <p>Smart tests that adjust difficulty according to student performance.</p>
-          </div>
-
-          <div className="why-card">
-            <h4>👨‍🏫 Expert Faculty</h4>
-            <p>Experienced teachers with proven track record & dedication.</p>
-          </div>
-
-          <div className="why-card">
-            <h4>💬 Live Doubt Sessions</h4>
-            <p>Daily doubt solving to help students stay on track.</p>
-          </div>
+          <button className="btn-primary full glow" onClick={handleSubmit}>
+            Submit
+          </button>
         </div>
       </section>
 
       {/* PROGRAMS */}
       <section className="program-section">
-        <h2>Choose a Program</h2>
+        <h2>Programs We Offer</h2>
 
         <div className="program-grid">
-          <div className="program-card">
+          <div className="program-card fade-in">
             <h3>JEE Main + Advanced</h3>
-            <p>1-Year / 2-Year Programs</p>
-            <button className="btn-program">Explore →</button>
+            <p>Intensive 1–2 year training</p>
+            <button className="btn-program" onClick={() => openModal("jee")}>Explore →</button>
           </div>
 
-          <div className="program-card">
+          <div className="program-card fade-in">
             <h3>NEET Target Batch</h3>
-            <p>Complete PCB Preparation</p>
-            <button className="btn-program">Explore →</button>
-          </div>
-
-          <div className="program-card">
-            <h3>Foundation Class 9</h3>
-            <p>Concept Building + Olympiad Prep</p>
-            <button className="btn-program">Explore →</button>
-          </div>
-
-          <div className="program-card">
-            <h3>Foundation Class 10</h3>
-            <p>PCM + PCB Basics Strengthening</p>
-            <button className="btn-program">Explore →</button>
+            <p>Complete PCB preparation</p>
+            <button className="btn-program" onClick={() => openModal("neet")}>Explore →</button>
           </div>
         </div>
       </section>
+
+      {/* MODALS */}
+      <ProgramModal open={modalOpen} onClose={() => setModalOpen(false)} data={modalData} />
+      <SuccessPopup show={popup} onClose={() => setPopup(false)} />
 
     </div>
   );

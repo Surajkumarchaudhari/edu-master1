@@ -1,5 +1,6 @@
 import React from "react";
 import "./Resources.css";
+import { Link } from "react-router-dom";
 
 const Resources = () => {
   return (
@@ -16,71 +17,45 @@ const Resources = () => {
         <div className="res-card">
           <div className="res-icon">📘</div>
           <h3>Study Materials</h3>
-          <p>Structured chapter notes designed by expert faculty.</p>
-          <button>Download Notes →</button>
+          <p>Structured chapter notes.</p>
+          <Link to="/resources/notes"><button>Download Notes →</button></Link>
         </div>
 
         <div className="res-card">
           <div className="res-icon">📝</div>
           <h3>Previous Year Papers</h3>
-          <p>All JEE & NEET past papers with solutions.</p>
-          <button>View Papers →</button>
+          <p>All past papers with solutions.</p>
+          <Link to="/resources/papers"><button>View Papers →</button></Link>
         </div>
 
         <div className="res-card">
           <div className="res-icon">📊</div>
           <h3>Test Series</h3>
-          <p>Adaptive test series with smart analytics.</p>
-          <button>Attempt Test →</button>
+          <p>Adaptive test series.</p>
+          <Link to="/resources/tests"><button>Attempt Test →</button></Link>
         </div>
 
         <div className="res-card">
           <div className="res-icon">🎧</div>
           <h3>Video Lectures</h3>
-          <p>Recorded lectures for revision & concept clarity.</p>
-          <button>Watch Lectures →</button>
+          <p>Recorded lectures for revision.</p>
+          <Link to="/resources/lectures"><button>Watch Lectures →</button></Link>
         </div>
 
         <div className="res-card">
           <div className="res-icon">💬</div>
           <h3>Doubt Support</h3>
-          <p>Ask doubts anytime & get expert solutions instantly.</p>
-          <button>Ask Doubts →</button>
+          <p>Ask doubts anytime.</p>
+          <Link to="/resources/doubts"><button>Ask Doubts →</button></Link>
         </div>
 
         <div className="res-card">
           <div className="res-icon">📂</div>
           <h3>Assignments</h3>
-          <p>Daily & weekly assignments to track progress.</p>
-          <button>Download Assignments →</button>
+          <p>Daily & weekly assignments.</p>
+          <Link to="/resources/assignments"><button>Download Assignments →</button></Link>
         </div>
       </section>
-
-      {/* EXTRA SECTION */}
-      <section className="extra-section">
-        <h2>Boost Your Preparation</h2>
-
-        <div className="extra-grid">
-          <div className="extra-card">
-            <h4>Formula Sheets</h4>
-            <p>Quick revision sheets for last-minute preparation.</p>
-            <button>Download →</button>
-          </div>
-
-          <div className="extra-card">
-            <h4>Important Questions</h4>
-            <p>Hand-picked questions expected in exams.</p>
-            <button>View →</button>
-          </div>
-
-          <div className="extra-card">
-            <h4>Exam Strategy Guide</h4>
-            <p>Time management & scoring strategies by toppers.</p>
-            <button>Read →</button>
-          </div>
-        </div>
-      </section>
-
     </div>
   );
 };
