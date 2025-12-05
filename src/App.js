@@ -24,11 +24,14 @@ import DoubtsPage from "./pages/Resources/DoubtsPage";
 import AssignmentsPage from "./pages/Resources/AssignmentsPage";
 import FilePreview from "./pages/Resources/FilePreview";
 
-// ⭐ ADMISSION DETAIL PAGE
+// ⭐ PROGRAM DETAILS PAGE (DYNAMIC)
 import ProgramDetails from "./pages/Admissions/ProgramDetails";
 
 // ⭐ BLOG DETAILS PAGE
 import BlogDetails from "./pages/Blog/BlogDetails";
+
+// ⭐ COURSES DETAILS PAGE (NEW)
+import CourseDetails from "./pages/Courses/CourseDetails";
 
 function App() {
   return (
@@ -39,6 +42,10 @@ function App() {
         {/* MAIN ROUTES */}
         <Route path="/" element={<Home />} />
         <Route path="/courses" element={<CoursesPage />} />
+
+        {/* 👉 ADD DYNAMIC COURSE DETAILS ROUTE */}
+        <Route path="/courses/:slug" element={<CourseDetails />} />
+
         <Route path="/admissions" element={<Admissions />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/faculty" element={<Faculty />} />
@@ -58,13 +65,13 @@ function App() {
         <Route path="/resources/doubts" element={<DoubtsPage />} />
         <Route path="/resources/assignments" element={<AssignmentsPage />} />
 
-        {/* ⭐ UNIVERSAL FILE PREVIEW */}
+        {/* UNIVERSAL FILE PREVIEW */}
         <Route path="/resources/preview/:id" element={<FilePreview />} />
 
-        {/* ⭐ PROGRAM DETAILS ROUTE */}
+        {/* ⭐ Admission Program Details */}
         <Route path="/program-details/:course" element={<ProgramDetails />} />
 
-        {/* ⭐ BLOG DETAILS ROUTE */}
+        {/* ⭐ BLOG DETAILS PAGE */}
         <Route path="/blog/:id" element={<BlogDetails />} />
       </Routes>
     </BrowserRouter>

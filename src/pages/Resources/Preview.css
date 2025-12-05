@@ -1,0 +1,40 @@
+.preview-page {
+  padding: 40px;
+}
+
+.preview-page h2 {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.preview-box {
+  margin-top: 20px;
+  padding: 40px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  font-size: 18px;
+  color: #444;
+}
+
+.submit-btn {
+  padding: 12px 30px;
+  background: #ff7a00;
+  border: none;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.success-msg {
+  margin-top: 25px;
+  padding: 12px;
+  color: green;
+  background: #d9ffd9;
+  width: fit-content;
+  border-radius: 8px;
+  font-weight: 600;
+}

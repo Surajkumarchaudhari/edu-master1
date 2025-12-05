@@ -1,29 +1,25 @@
 import React from "react";
 import "./CourseCard.css";
 
-const CourseCard = ({ title, subtitle, icon, theme }) => {
+const CourseCard = ({ theme, icon, title, subtitle }) => {
   return (
     <div className="course-card">
-      <div className="left">
+
+      <div className="card-left">
         <h3 className="course-title">{title}</h3>
         <p className="course-sub">{subtitle}</p>
 
-        <button
-          className={`course-btn ${theme === "jee" ? "jee-btn" : "neet-btn"}`}
-        >
+        <button className={`course-btn ${theme}`}>
           Explore →
         </button>
       </div>
 
-      <div className="card-icon">
-        <div
-          className={`card-icon-bg ${
-            theme === "jee" ? "jee-bg" : "neet-bg"
-          }`}
-        >
+      <div className="card-right">
+        <div className={`icon-circle ${theme}`}>
           {icon}
         </div>
       </div>
+
     </div>
   );
 };

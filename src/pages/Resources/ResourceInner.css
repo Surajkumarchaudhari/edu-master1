@@ -1,0 +1,36 @@
+.inner-page {
+  padding: 40px;
+}
+
+.inner-page h2 {
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.file-card {
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.file-card:hover {
+  transform: translateY(-4px);
+}
+
+.file-card h4 {
+  font-size: 20px;
+}
+
+.file-card p {
+  color: #555;
+}
