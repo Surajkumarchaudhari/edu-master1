@@ -41,10 +41,6 @@ const Admissions = () => {
             Expert Teachers • Smart Tests • Doubt Support
           </p>
 
-<<<<<<< HEAD
-          <div className="hero-buttons">
-            <button className="btn-primary glow">Apply for Free Counselling</button>
-=======
           {/* ⭐ Rating Row – compact + professional */}
           <div className="hero-rating">
             <div className="hero-rating-stars">★★★★★</div>
@@ -54,10 +50,7 @@ const Admissions = () => {
           </div>
 
           <div className="hero-buttons">
-            <button className="btn-primary glow">
-              Apply for Free Counselling
-            </button>
->>>>>>> 1a55cbfef49a2295d1743fd48e75944582ac3d3e
+            <button className="btn-primary glow">Apply for Free Counselling</button>
             <button className="btn-outline">Download Prospectus</button>
           </div>
         </div>
@@ -90,10 +83,7 @@ const Admissions = () => {
             <div key={p.key} className="program-card fade-in">
               <h3>{p.title}</h3>
               <p>{p.subtitle}</p>
-              <button
-                className="btn-program"
-                onClick={() => openModal(p.key)}
-              >
+              <button className="btn-program" onClick={() => openModal(p.key)}>
                 Explore →
               </button>
             </div>
@@ -102,18 +92,12 @@ const Admissions = () => {
       </section>
 
       {/* MODALS */}
-<<<<<<< HEAD
-      <ProgramModal open={modalOpen} onClose={() => setModalOpen(false)} data={modalData} />
-      <SuccessPopup show={popup} onClose={() => setPopup(false)} />
-
-=======
       <ProgramModal
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         data={modalData}
       />
       <SuccessPopup show={popup} onClose={() => setPopup(false)} />
->>>>>>> 1a55cbfef49a2295d1743fd48e75944582ac3d3e
     </div>
   );
 };
