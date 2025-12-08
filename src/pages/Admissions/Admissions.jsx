@@ -28,20 +28,36 @@ const Admissions = () => {
 
   return (
     <div className="admission-page">
-
       {/* HERO SECTION */}
       <section className="hero-section">
-
         <div className="hero-left">
           <h1>
-            Build Your Future With  
-            <span> India's Leading Coaching</span>
+            Build Your Future
+            <br />
+            With <span>India&apos;s Leading Coaching</span>
           </h1>
 
-          <p className="hero-sub">Expert Teachers • Smart Tests • Doubt Support</p>
+          <p className="hero-sub">
+            Expert Teachers • Smart Tests • Doubt Support
+          </p>
 
+<<<<<<< HEAD
           <div className="hero-buttons">
             <button className="btn-primary glow">Apply for Free Counselling</button>
+=======
+          {/* ⭐ Rating Row – compact + professional */}
+          <div className="hero-rating">
+            <div className="hero-rating-stars">★★★★★</div>
+            <span className="hero-rating-score">4.9/5 Rating</span>
+            <span className="hero-rating-dot">•</span>
+            <span>Trusted by 1200+ aspirants</span>
+          </div>
+
+          <div className="hero-buttons">
+            <button className="btn-primary glow">
+              Apply for Free Counselling
+            </button>
+>>>>>>> 1a55cbfef49a2295d1743fd48e75944582ac3d3e
             <button className="btn-outline">Download Prospectus</button>
           </div>
         </div>
@@ -86,9 +102,18 @@ const Admissions = () => {
       </section>
 
       {/* MODALS */}
+<<<<<<< HEAD
       <ProgramModal open={modalOpen} onClose={() => setModalOpen(false)} data={modalData} />
       <SuccessPopup show={popup} onClose={() => setPopup(false)} />
 
+=======
+      <ProgramModal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        data={modalData}
+      />
+      <SuccessPopup show={popup} onClose={() => setPopup(false)} />
+>>>>>>> 1a55cbfef49a2295d1743fd48e75944582ac3d3e
     </div>
   );
 };
