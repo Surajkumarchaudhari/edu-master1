@@ -11,18 +11,13 @@ const Hero = () => {
 
   return (
     <section className="hero">
-      {/* Floating animated shapes */}
-      <div className="hero-shape hero-shape-1"></div>
-      <div className="hero-shape hero-shape-2"></div>
-      <div className="hero-shape hero-shape-3"></div>
-
       <div className="hero-container">
 
-        {/* LEFT */}
+        {/* LEFT CONTENT */}
         <div className="hero-left" data-aos="fade-right">
           <div className="hero-card">
             <h1>
-              India’s Most Trusted <br />
+              India's Most Trusted <br />
               <span>Coaching Institute</span>
             </h1>
 
@@ -30,28 +25,6 @@ const Hero = () => {
               Preparing students for JEE & NEET with top faculties, structured
               courses, test-series & doubt support.
             </p>
-
-            {/* SEARCH BAR */}
-            <div className="hero-search">
-              <div className="search-input-wrapper">
-                <i className="search-icon">🔍</i>
-                <input
-                  type="text"
-                  placeholder="Search for JEE / NEET / Class 11 & 12 courses"
-                />
-              </div>
-
-              <select className="search-select">
-                <option value="">Select Category</option>
-                <option value="jee-main">JEE Main</option>
-                <option value="jee-advanced">JEE Advanced</option>
-                <option value="neet">NEET UG</option>
-                <option value="foundation">Foundation (8th–10th)</option>
-                <option value="boards">Board Exams</option>
-              </select>
-
-              <button className="btn search-btn">Search</button>
-            </div>
 
             {/* Buttons */}
             <div className="hero-buttons">
@@ -64,11 +37,11 @@ const Hero = () => {
         {/* RIGHT IMAGE */}
         <div className="hero-right" data-aos="zoom-in">
           <img src={heroImg} alt="Students" className="hero-img" />
-
-          {/* Small glass badge */}
-          <div className="hero-badge">
-            <span>100K+</span>
-            <p>Students Trust Us</p>
+          
+          {/* Student Count Badge */}
+          <div className="student-count">
+            <div className="count-number">100K+</div>
+            <div className="count-text">Students Trust Us</div>
           </div>
         </div>
 

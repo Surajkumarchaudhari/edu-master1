@@ -40,4 +40,57 @@ const Admissions = () => {
 
           <p className="hero-sub">Expert Teachers • Smart Tests • Doubt Support</p>
 
-          <div className
+          <div className="hero-buttons">
+            <button className="btn-primary glow">Apply for Free Counselling</button>
+            <button className="btn-outline">Download Prospectus</button>
+          </div>
+        </div>
+
+        <div className="hero-form glass">
+          <h3>Quick Apply</h3>
+
+          <input type="text" placeholder="Full Name" />
+          <input type="text" placeholder="Phone Number" />
+
+          <select>
+            <option>Select Program</option>
+            {programs.map((p) => (
+              <option key={p.key}>{p.title}</option>
+            ))}
+          </select>
+
+          <button className="btn-primary full glow" onClick={handleSubmit}>
+            Submit
+          </button>
+        </div>
+      </section>
+
+      {/* PROGRAMS DYNAMIC SECTION */}
+      <section className="program-section">
+        <h2>Programs We Offer</h2>
+
+        <div className="program-grid">
+          {programs.map((p) => (
+            <div key={p.key} className="program-card fade-in">
+              <h3>{p.title}</h3>
+              <p>{p.subtitle}</p>
+              <button
+                className="btn-program"
+                onClick={() => openModal(p.key)}
+              >
+                Explore →
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* MODALS */}
+      <ProgramModal open={modalOpen} onClose={() => setModalOpen(false)} data={modalData} />
+      <SuccessPopup show={popup} onClose={() => setPopup(false)} />
+
+    </div>
+  );
+};
+
+export default Admissions;

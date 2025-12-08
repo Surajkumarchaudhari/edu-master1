@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
 
+// ⭐ MAIN PAGES
 import Home from "./pages/Home/Home";
 import CoursesPage from "./pages/Courses/Courses";
 import Admissions from "./pages/Admissions/Admissions";
@@ -24,28 +25,24 @@ import DoubtsPage from "./pages/Resources/DoubtsPage";
 import AssignmentsPage from "./pages/Resources/AssignmentsPage";
 import FilePreview from "./pages/Resources/FilePreview";
 
-// ⭐ PROGRAM DETAILS PAGE (DYNAMIC)
+// ⭐ PROGRAM & COURSE DETAILS
 import ProgramDetails from "./pages/Admissions/ProgramDetails";
+import CourseDetails from "./pages/Courses/CourseDetails";
 
 // ⭐ BLOG DETAILS PAGE
 import BlogDetails from "./pages/Blog/BlogDetails";
 
-// ⭐ COURSES DETAILS PAGE (NEW)
-import CourseDetails from "./pages/Courses/CourseDetails";
-
 function App() {
   return (
     <BrowserRouter>
+      {/* 👇 Navbar Always Visible */}
       <Navbar />
 
       <Routes>
-        {/* MAIN ROUTES */}
+        {/* ⭐ MAIN ROUTES */}
         <Route path="/" element={<Home />} />
         <Route path="/courses" element={<CoursesPage />} />
-
-        {/* 👉 ADD DYNAMIC COURSE DETAILS ROUTE */}
         <Route path="/courses/:slug" element={<CourseDetails />} />
-
         <Route path="/admissions" element={<Admissions />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/faculty" element={<Faculty />} />
@@ -57,7 +54,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        {/* ⭐ RESOURCES INNER ROUTES */}
+        {/* 🎯 RESOURCES SUB ROUTES */}
         <Route path="/resources/notes" element={<NotesPage />} />
         <Route path="/resources/papers" element={<PapersPage />} />
         <Route path="/resources/tests" element={<TestsPage />} />
@@ -65,13 +62,11 @@ function App() {
         <Route path="/resources/doubts" element={<DoubtsPage />} />
         <Route path="/resources/assignments" element={<AssignmentsPage />} />
 
-        {/* UNIVERSAL FILE PREVIEW */}
+        {/* 📌 UNIVERSAL FILE PREVIEW */}
         <Route path="/resources/preview/:id" element={<FilePreview />} />
 
-        {/* ⭐ Admission Program Details */}
+        {/* 📌 OTHER DETAILS */}
         <Route path="/program-details/:course" element={<ProgramDetails />} />
-
-        {/* ⭐ BLOG DETAILS PAGE */}
         <Route path="/blog/:id" element={<BlogDetails />} />
       </Routes>
     </BrowserRouter>
