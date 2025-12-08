@@ -29,60 +29,63 @@ const topAchievers = [
 ];
 
 const dataStats = [
-  { number: "1200+", label: "Selections in JEE" },
-  { number: "950+", label: "Selections in NEET" },
-  { number: "300+", label: "Top Ranks (AIR)" },
-  { number: "10,000+", label: "Happy Students" },
+  { number: "1200+", sub: "Selections in JEE", icon: "📈" },
+  { number: "950+", sub: "Selections in NEET", icon: "🩺" },
+  { number: "300+", sub: "Top Ranks (AIR)", icon: "🥇" },
+  { number: "10,000+", sub: "Happy Students", icon: "🎓" },
 ];
 
 const Placements = () => {
   return (
     <div className="placement-page">
+      <div className="placement-inner">
+        {/* HERO */}
+        <section className="placement-hero">
+          <h1>
+            Our <span>Results & Achievements</span>
+          </h1>
+          <p>
+            Year after year, our students secure top ranks in JEE & NEET
+            nationwide.
+          </p>
+        </section>
 
-      {/* HERO SECTION */}
-      <section className="placement-hero">
-        <h1>
-          Our <span>Results & Achievements</span>
-        </h1>
-        <p>Year after year, our students secure top ranks in JEE & NEET nationwide.</p>
-      </section>
+        {/* STATS GRID */}
+        <section className="stats-section">
+          <div className="stats-grid">
+            {dataStats.map((d, i) => (
+              <div className="stat-card" key={i}>
+                <div className="stat-icon">{d.icon}</div>
+                <h2>{d.number}</h2>
+                <p className="stat-sub">{d.sub}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
-      {/* STATS SECTION */}
-      <section className="stats-section">
-        <div className="stats-grid">
-          {dataStats.map((d, i) => (
-            <div className="stat-card" key={i}>
-              <h2>{d.number}</h2>
-              <p>{d.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+        {/* TOP ACHIEVERS */}
+        <section className="achievers-section">
+          <h2>Our Top Achievers</h2>
 
-      {/* TOP ACHIEVERS */}
-      <section className="achievers-section">
-        <h2>Our Top Achievers</h2>
+          <div className="achievers-grid">
+            {topAchievers.map((s, i) => (
+              <div className="achiever-card" key={i}>
+                <img src={s.img} alt={s.name} className="achiever-img" />
+                <h3 className="achiever-name">{s.name}</h3>
+                <p className="exam">{s.exam}</p>
+                <p className="year">{s.year}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
-        <div className="achievers-grid">
-          {topAchievers.map((s, i) => (
-            <div className="achiever-card" key={i}>
-              <img src={s.img} alt={s.name} className="achiever-img" />
-
-              <h3>{s.name}</h3>
-              <p className="exam">{s.exam}</p>
-              <p className="year">{s.year}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA SECTION */}
-      <section className="cta-section">
-        <h2>Become the Next Top Ranker</h2>
-        <p>Join our expert-guided courses and achieve your dream rank.</p>
-        <button className="join-btn">Join Now →</button>
-      </section>
-
+        {/* CTA */}
+        <section className="cta-section">
+          <h2>Become the Next Top Ranker</h2>
+          <p>Join our expert-guided courses and achieve your dream rank.</p>
+          <button className="join-btn">Join Now →</button>
+        </section>
+      </div>
     </div>
   );
 };

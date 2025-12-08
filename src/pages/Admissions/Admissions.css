@@ -29,20 +29,47 @@
   font-weight: 800;
   line-height: 1.2;
   max-width: 520px;
+  color: #111;
 }
 
 .hero-left span {
-  color: #ff7a00;
+  color: #111;
 }
 
 .hero-sub {
-  margin-top: 14px;
+  margin-top: 10px;
   color: #555;
   font-size: 17px;
 }
 
+/* ====== RATING ROW (clean + less gap) ====== */
+.hero-rating {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #555;
+}
+
+.hero-rating-stars {
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+.hero-rating-score {
+  font-weight: 600;
+}
+
+.hero-rating-dot {
+  font-size: 16px;
+  margin: 0 2px;
+}
+
+/* BUTTONS */
 .hero-buttons {
-  margin-top: 25px;
+  margin-top: 18px;
   display: flex;
   gap: 15px;
 }
@@ -173,6 +200,11 @@
   .hero-left h1 {
     font-size: 38px;
     margin: 0 auto;
+  }
+
+  .hero-rating {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .hero-form {
