@@ -41,6 +41,7 @@ const Admissions = () => {
             Expert Teachers • Smart Tests • Doubt Support
           </p>
 
+<<<<<<< HEAD
           {/* ⭐ Rating Row – compact + professional */}
           <div className="hero-rating">
             <div className="hero-rating-stars">★★★★★</div>
@@ -53,6 +54,10 @@ const Admissions = () => {
             <button className="btn-primary glow">
               Apply for Free Counselling
             </button>
+=======
+          <div className="hero-buttons">
+            <button className="btn-primary glow">Apply for Free Counselling</button>
+>>>>>>> 793a855dd42d1d897990b5d7e39d16a8c9b494e7
             <button className="btn-outline">Download Prospectus</button>
           </div>
         </div>
@@ -97,14 +102,24 @@ const Admissions = () => {
       </section>
 
       {/* MODALS */}
+<<<<<<< HEAD
       <ProgramModal
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         data={modalData}
       />
       <SuccessPopup show={popup} onClose={() => setPopup(false)} />
+=======
+      <ProgramModal open={modalOpen} onClose={() => setModalOpen(false)} data={modalData} />
+      <SuccessPopup show={popup} onClose={() => setPopup(false)} />
+
+>>>>>>> 793a855dd42d1d897990b5d7e39d16a8c9b494e7
     </div>
   );
 };
 
+<<<<<<< HEAD
 export default Admissions;
+=======
+export default Admissions;
+>>>>>>> 793a855dd42d1d897990b5d7e39d16a8c9b494e7
