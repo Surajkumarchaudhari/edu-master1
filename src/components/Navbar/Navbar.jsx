@@ -1,3 +1,4 @@
+// src/components/Navbar.jsx
 import React, { useState } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
@@ -33,18 +34,19 @@ const Navbar = () => {
 
           {/* Right Buttons */}
           <div className="nav-right">
-            <button className="light-btn">Light</button>
 
-            {/* ⭐ FIX: Login now works because using Link */}
+            {/* ⭐ Teacher Button */}
+            <Link to="/teacher-admin">
+              <button className="teacher-btn">Teacher</button>
+            </Link>
+
+            {/* ⭐ Login */}
             <Link to="/login">
               <button className="login-btn">Login</button>
             </Link>
 
-            {/* Hamburger Icon */}
-            <div
-              className="menu-icon"
-              onClick={() => setMenuOpen(true)}
-            >
+            {/* Hamburger */}
+            <div className="menu-icon" onClick={() => setMenuOpen(true)}>
               ☰
             </div>
           </div>
@@ -65,10 +67,12 @@ const Navbar = () => {
         <Link onClick={() => setMenuOpen(false)} to="/blog">Blog</Link>
         <Link onClick={() => setMenuOpen(false)} to="/contact">Contact</Link>
 
-        {/* ⭐ Mobile Login fix */}
+        {/* ⭐ Mobile Teacher */}
+        <Link onClick={() => setMenuOpen(false)} to="/teacher-admin">Teacher</Link>
+
+        {/* ⭐ Mobile Login */}
         <Link onClick={() => setMenuOpen(false)} to="/login">Login</Link>
       </div>
-
     </>
   );
 };

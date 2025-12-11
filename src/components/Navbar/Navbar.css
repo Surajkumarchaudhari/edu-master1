@@ -1,7 +1,10 @@
-/* Navbar */
+/* ===========================
+    🟧 Navbar Styling
+=========================== */
+
 .navbar {
   width: 100%;
-  padding: 18px 0;
+  padding: 15px 0;
   background: #ffffff;
   border-bottom: 1px solid #eee;
   position: sticky;
@@ -9,6 +12,7 @@
   z-index: 1000;
 }
 
+/* Container */
 .nav-container {
   width: 90%;
   max-width: 1300px;
@@ -18,26 +22,36 @@
   justify-content: space-between;
 }
 
-/* Logo Left */
+/* ===========================
+    🔸 Logo Section
+=========================== */
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .logo-box {
   background: #ff9800;
-  padding: 8px 14px;
-  border-radius: 8px;
+  padding: 9px 15px;
+  border-radius: 10px;
   font-size: 18px;
   font-weight: bold;
-  color: white;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(255, 152, 0, 0.4);
+  transition: 0.2s ease-in-out;
+}
+
+.logo-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 7px rgba(255,152,0,0.6);
 }
 
 .logo-text h2 {
   margin: 0;
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 700;
+  color: #111;
 }
 
 .logo-text span {
@@ -46,11 +60,13 @@
   color: #666;
 }
 
-/* Desktop Menu */
+/* ===========================
+    📌 Desktop Menu
+=========================== */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 28px;
   list-style: none;
 }
 
@@ -59,46 +75,90 @@
   color: #333;
   font-size: 16px;
   font-weight: 500;
+  transition: 0.3s ease;
+  padding: 6px 0;
 }
 
 .nav-links a:hover {
   color: #ff6c00;
+  border-bottom: 2px solid #ff6c00;
 }
 
-/* Right Buttons */
+/* ===========================
+    🎯 Right Side Buttons
+=========================== */
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
-.light-btn {
-  padding: 6px 14px;
+/* ⭐ Student Button */
+.student-btn {
+  padding: 7px 15px;
   border-radius: 8px;
   border: none;
-  background: #ffe5c2;
-  color: #333;
+  background: #3b82f6;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+  box-shadow: 0 2px 5px rgba(59,130,246,0.4);
 }
 
+.student-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* ⭐ Teacher Button */
+.teacher-btn {
+  padding: 7px 15px;
+  border-radius: 8px;
+  border: none;
+  background: #337AB7;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+  box-shadow: 0 2px 5px rgba(51,122,183,0.4);
+}
+
+.teacher-btn:hover {
+  background: #25609b;
+  transform: translateY(-2px);
+}
+
+/* ⭐ Login Button */
 .login-btn {
-  padding: 6px 18px;
+  padding: 7px 18px;
   border-radius: 8px;
   border: none;
   background: #ff6c00;
-  color: white;
+  color: #fff;
   font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+  box-shadow: 0 2px 5px rgba(255,108,0,0.4);
 }
 
-/* Hamburger Icon */
+.login-btn:hover {
+  background: #e45c00;
+  transform: translateY(-2px);
+}
+
+/* 🍔 Hamburger */
 .menu-icon {
   display: none;
   font-size: 30px;
   cursor: pointer;
   margin-left: 10px;
+  user-select: none;
 }
 
-/* ---------------- MOBILE MENU ---------------- */
-
+/* ===========================
+    📱 Mobile Menu
+=========================== */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -106,12 +166,13 @@
   width: 260px;
   height: 100%;
   background: #fff;
-  box-shadow: -2px 0 15px rgba(0, 0, 0, 0.2);
+  border-left: 2px solid #ff6c00;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.15);
   padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  transition: 0.4s ease;
+  gap: 22px;
+  transition: 0.40s ease-in-out;
   z-index: 2000;
 }
 
@@ -124,24 +185,30 @@
   font-size: 18px;
   color: #333;
   font-weight: 600;
+  transition: 0.3s;
 }
 
 .mobile-menu a:hover {
   color: #ff6c00;
+  transform: translateX(4px);
 }
 
 .close-btn {
-  font-size: 40px;
+  font-size: 42px;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  color: #ff6c00;
+  font-weight: bold;
+  align-self: flex-end;
 }
 
-/* RESPONSIVE */
+/* ===========================
+    📌 Responsive
+=========================== */
 @media (max-width: 900px) {
   .nav-links {
     display: none;
   }
-
   .menu-icon {
     display: block;
   }

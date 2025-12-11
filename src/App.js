@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 
 // ⭐ MAIN PAGES
@@ -32,11 +31,18 @@ import CourseDetails from "./pages/Courses/CourseDetails";
 // ⭐ BLOG DETAILS PAGE
 import BlogDetails from "./pages/Blog/BlogDetails";
 
-function App() {
+// ⭐ TEACHER ADMIN (FULLSCREEN)
+import TeacherAdmin from "./components/teacheradmin";
+
+function AppRoutes() {
+  const location = useLocation();
+
+  // ❗ Hide Navbar on ANY teacher-admin route (including nested ones)
+  const hideNavbar = location.pathname.startsWith("/teacher-admin");
+
   return (
-    <BrowserRouter>
-      {/* 👇 Navbar Always Visible */}
-      <Navbar />
+    <>
+      {!hideNavbar && <Navbar />}
 
       <Routes>
         {/* ⭐ MAIN ROUTES */}
@@ -65,12 +71,21 @@ function App() {
         {/* 📌 UNIVERSAL FILE PREVIEW */}
         <Route path="/resources/preview/:id" element={<FilePreview />} />
 
-        {/* 📌 OTHER DETAILS */}
+        {/* 📌 DETAILS */}
         <Route path="/program-details/:course" element={<ProgramDetails />} />
         <Route path="/blog/:id" element={<BlogDetails />} />
+
+        {/* 🧑‍🏫 TEACHER ADMIN */}
+        <Route path="/teacher-admin" element={<TeacherAdmin />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  );
+}
